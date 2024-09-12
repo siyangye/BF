@@ -1,20 +1,26 @@
 package com.example.coachapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Player {
 
     private Coach tennisCoach;
     private Coach golfCoach;
     private Coach footballCoach;
 
-    // Constructor for TennisCoach
+    @Autowired
     public Player(Coach tennisCoach) {
         this.tennisCoach = tennisCoach;
     }
 
+    @Autowired
     public void setGolfCoach(Coach golfCoach) {
         this.golfCoach = golfCoach;
     }
 
+    @Autowired
     public void setFootballCoach(Coach footballCoach) {
         this.footballCoach = footballCoach;
     }

@@ -4,30 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Bean for TennisCoach with constructor injection -->
     <bean id="tennisCoach" class="com.example.coachapp.TennisCoach" init-method="loadSchedulesFromFile">
-        <!-- No constructor arguments required since the schedules will be loaded from the file -->
     </bean>
 
-    <!-- Bean for GolfCoach with setter injection -->
     <bean id="golfCoach" class="com.example.coachapp.GolfCoach">
         <property name="schedule" value="Golf Coach: Practice golf for 2 hours"/>
     </bean>
 
-    <!-- Bean for FootballCoach with setter injection (Field injection not supported in XML) -->
     <bean id="footballCoach" class="com.example.coachapp.FootballCoach">
         <property name="schedule" value="Football Coach: Practice football for 3 hours"/>
     </bean>
 
-    <!-- Bean for Player -->
     <bean id="player" class="com.example.coachapp.Player">
-        <!-- Inject TennisCoach using constructor -->
         <constructor-arg ref="tennisCoach"/>
 
-        <!-- Inject GolfCoach using setter -->
         <property name="golfCoach" ref="golfCoach"/>
 
-        <!-- Inject FootballCoach using setter -->
         <property name="footballCoach" ref="footballCoach"/>
     </bean>
 
