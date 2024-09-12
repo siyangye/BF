@@ -9,6 +9,6 @@ public class FootballCoach implements Coach {
 
     @Override
     public String getDailyWorkOutSchedule() {
-        return "Football Coach: " + schedule;
+        return schedule;
     }
 }

@@ -9,7 +9,7 @@ public class GolfCoach implements Coach {
 
     @Override
     public String getDailyWorkOutSchedule() {
-        return "Golf Coach: " + schedule;
+        return schedule;
     }
 }
 
